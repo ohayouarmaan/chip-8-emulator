@@ -1,6 +1,6 @@
 use std::io::prelude::*;
 use std::fs::File;
-use memory::Memory;
+// use memory::Memory;
 use cpu::CPU;
 
 mod memory;
@@ -12,4 +12,5 @@ fn main() {
     f.read_to_end(&mut buffer).unwrap();
     let mut chip8 = CPU::new();
     chip8.load_rom(buffer);
+    println!("{:?}", chip8.registers);
 }
